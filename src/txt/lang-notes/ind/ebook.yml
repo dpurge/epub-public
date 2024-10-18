@@ -1,0 +1,28 @@
+identifier: 1229b9f3-781b-4f43-9972-8322fa8f03f0
+filename: latin-notes-open.epub
+
+title: Latin notes (open)
+author: DPurge
+language: lat
+script: latn
+
+cover: cover.svg
+description: |
+  Latin learning notes.
+
+font: []
+image: []
+
+stylesheet:
+  cover: ../../../css/lang/latn/main.css
+  section: ../../../css/lang/latn/main.css
+  chapter: ../../../css/lang/latn/main.css
+
+text:
+- - section01/section01.md
+  - section01/chapter01.md
+  
+- - section02/section02.md
+  - section02/chapter01.md
+  - section02/chapter02.md
+  

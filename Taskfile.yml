@@ -1,0 +1,54 @@
+version: '3'
+
+vars:
+  DIST_DIR: '{{.ROOT_DIR}}/out'
+  GIT_COMMIT:
+    sh: git log -n 1 --format=%h
+  EPUB_PROJECTS: |
+    src/txt/lang-notes/ind
+
+tasks:
+
+  build:
+    desc: Build ePub project in the current directory
+    cmds:
+      - task: build-epub
+        vars:
+          WORKING_DIR: '{{.USER_WORKING_DIR}}'
+
+  build-all:
+    desc: Build all ePub projects
+    cmds:
+      - for: { var: EPUB_PROJECTS }
+        task: build-epub
+        vars:
+          WORKING_DIR: '{{.ITEM}}'
+
+  build-epub:
+    desc: Build ePub
+    internal: true
+    silent: true
+    dir: '{{.WORKING_DIR}}'
+    preconditions:
+      - test -f ebook.yml
+    requires:
+      vars:
+        - WORKING_DIR
+    cmds:
+      - echo 'Building {{.WORKING_DIR}} ...'
+      - ebook-cli build
+      # - ebook-cli build --output {{.DIST_DIR}}
+  
+  pdf:
+    desc: Convert books to A5 PDF
+    dir: '{{.DIST_DIR}}'
+    requires:
+      vars:
+        - DIST_DIR
+    cmds:
+      - |
+        set -e
+        export QTWEBENGINE_CHROMIUM_FLAGS="--no-sandbox"
+        for book in *.epub; do
+          ebook-convert ${book} ${book%.epub}.pdf --paper-size a5 --pdf-page-margin-bottom 36 --pdf-page-margin-left 24 --pdf-page-margin-right 24 --pdf-page-margin-top 24 --pdf-page-numbers
+        done
