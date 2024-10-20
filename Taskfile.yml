@@ -12,6 +12,9 @@ tasks:
   build:
     desc: Build ePub project in the current directory
     cmds:
+      - task: convert-coverpage
+        vars:
+          WORKING_DIR: '{{.USER_WORKING_DIR}}'
       - task: build-epub
         vars:
           WORKING_DIR: '{{.USER_WORKING_DIR}}'
@@ -38,6 +41,20 @@ tasks:
       - echo 'Building {{.WORKING_DIR}} ...'
       - ebook-cli build
       # - ebook-cli build --output {{.DIST_DIR}}
+
+  convert-coverpage:
+    desc: Convert coverpage
+    internal: true
+    silent: true
+    dir: '{{.WORKING_DIR}}'
+    preconditions:
+      - test -f cover.svg
+    requires:
+      vars:
+        - WORKING_DIR
+    cmds:
+      - echo 'Convertig coverpage in {{.WORKING_DIR}} ...'
+      - magick convert cover.svg cover.png
   
   pdf:
     desc: Convert books to A5 PDF

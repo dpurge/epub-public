@@ -1,0 +1,6 @@
+# output files
+.epub
+.pdf
+
+# temporary directories
+out/
