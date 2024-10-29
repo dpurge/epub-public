@@ -1,0 +1,25 @@
+h1, h2, h3, h4, h5, h6, ul, ol, dl {
+    text-align: right;
+    direction: rtl;
+    unicode-bidi: embed;
+}
+
+p, div, span {
+    direction: rtl;
+    unicode-bidi: embed;
+}
+
+div.dialog > div.dialog-item {
+    padding-right: 1em;
+    padding-left: 0em;
+}
+
+div.vocabulary > div.vocabulary-item {
+    direction: ltr;
+    unicode-bidi: embed;
+}
+
+div.vocabulary > div.vocabulary-item > span.vocabulary-phrase {
+    direction: rtl;
+    unicode-bidi: embed;
+}
