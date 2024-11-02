@@ -1,0 +1,41 @@
+/* @font-face {
+    font-family: 'Amiri';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/Amiri-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Amiri';
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/Amiri-Bold.ttf') format('truetype');
+} */
+
+@font-face {
+    font-family: "Font Header";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Scheherezade New Regular");
+}
+
+@font-face {
+    font-family: "Font Body";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Amiri Regular");
+}
+
+@font-face {
+    font-family: "Font Transcription";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Helvetica");
+}
+
+@font-face {
+    font-family: "Font Translation";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Times New Roman");
+}

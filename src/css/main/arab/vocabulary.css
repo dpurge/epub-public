@@ -1,0 +1,39 @@
+div.vocabulary {
+    column-count: 2;
+    margin-bottom: 1em;
+    direction: ltr;
+    unicode-bidi: embed;
+}
+div.vocabulary > div.vocabulary-item {
+    text-indent: -1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    orphans: 2;
+    widows: 2;
+}
+
+div.vocabulary > div.vocabulary-item > span.vocabulary-phrase {
+    font-size: 1em;
+    font-weight: normal;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    direction: rtl;
+    unicode-bidi: embed;
+}
+
+div.vocabulary > div.vocabulary-item > span.vocabulary-grammar {
+    font-family: "Font Header", sans-serif;
+    font-size: 0.8em;
+    color: darkgrey;
+}
+
+div.vocabulary > div.vocabulary-item > span.vocabulary-transcription {
+    font-family: "Font Transcription", sans-serif;
+    font-size: 0.8em;
+    font-style: italic;
+    color: darkgrey;
+}
+
+div.vocabulary > div.vocabulary-item > span.vocabulary-translation {
+    font-family: "Font Translation", serif;
+}

@@ -1,0 +1,31 @@
+identifier: d95af862-c268-42bf-9e4b-bd61d2ea7a4f
+filename: german-notes-public.epub
+
+title: Język niemiecki (publiczne)
+author: D. Purge
+language: deu
+script: latn
+
+cover: cover.svg
+description: |
+  Teksty i notatki do nauki języka niemieckiego.
+
+font: []
+image: []
+
+stylesheet:
+  cover: ../../../css/lang/latn/cover.css
+  section: ../../../css/lang/latn/section.css
+  chapter: ../../../css/lang/latn/chapter.css
+  common:
+    - ../../../css/main/latn/font.css
+    - ../../../css/main/latn/base.css
+    - ../../../css/main/latn/dialog.css
+    - ../../../css/main/latn/vocabulary.css
+
+text:
+- - reussner-1892/section.md
+  - reussner-1892/01.md
+  - reussner-1892/02.md
+  - reussner-1892/03.md
+  

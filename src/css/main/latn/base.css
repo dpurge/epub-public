@@ -1,0 +1,85 @@
+body {
+    font-size: 20px;
+    direction: ltr;
+    unicode-bidi: embed;
+}
+
+h1 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    text-indent: 0em;
+    text-align: left;
+    font-family: "Font Header", sans-serif;
+    font-size: 1.6em;
+    margin-bottom: 3.2em;
+}
+
+h2 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    text-indent: 0em;
+    text-align: left;
+    font-family: "Font Header", sans-serif;
+    font-size: 1.4em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    text-indent: 0em;
+    text-align: left;
+    font-family: "Font Header", sans-serif;
+    font-size: 1.2em;
+}
+
+p {
+    font-family: "Font Body", serif;
+    line-height: 1.2em;
+    text-align: justify;
+    orphans: 2;
+    widows: 2;
+}
+
+ul {
+    padding-inline-start: 0;
+    line-height: 1.2em;
+    list-style: none;
+}
+
+ul li:before
+{
+    content: '\2713';
+    margin: 0 1em;
+}
+
+table {
+    page-break-inside: avoid;
+    border: 1px;
+    margin: 1em auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th {
+    font-variant: small-caps;
+    padding: 5px !important;
+    vertical-align: baseline;
+    border-bottom: 1px solid black;
+}
+
+td {
+    font-family: serif;
+    padding: 5px !important;
+    page-break-inside: avoid;
+    text-align: left;
+    text-indent: 0;
+    vertical-align: baseline;
+}
+
+hr {
+    border-style: hidden;
+    border-top: 1px dashed darkgray;
+    margin-bottom: 1em;
+}

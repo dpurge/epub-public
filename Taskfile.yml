@@ -4,6 +4,8 @@ vars:
   DIST_DIR: '{{.ROOT_DIR}}/out'
   GIT_COMMIT:
     sh: git log -n 1 --format=%h
+  BUILD_DATE:
+    sh: date '+%Y-%m-%d'
   EPUB_PROJECTS: |
     src/txt/lang-notes/ind
 
@@ -12,9 +14,6 @@ tasks:
   build:
     desc: Build ePub project in the current directory
     cmds:
-      - task: convert-coverpage
-        vars:
-          WORKING_DIR: '{{.USER_WORKING_DIR}}'
       - task: build-epub
         vars:
           WORKING_DIR: '{{.USER_WORKING_DIR}}'
@@ -37,24 +36,21 @@ tasks:
     requires:
       vars:
         - WORKING_DIR
+        - DIST_DIR
+        - BUILD_DATE
+        - GIT_COMMIT
     cmds:
-      - echo 'Building {{.WORKING_DIR}} ...'
-      - ebook-cli build
-      # - ebook-cli build --output {{.DIST_DIR}}
-
-  convert-coverpage:
-    desc: Convert coverpage
-    internal: true
-    silent: true
-    dir: '{{.WORKING_DIR}}'
-    preconditions:
-      - test -f cover.svg
-    requires:
-      vars:
-        - WORKING_DIR
-    cmds:
-      - echo 'Convertig coverpage in {{.WORKING_DIR}} ...'
-      - magick convert cover.svg cover.png
+      - cmd: echo 'Building {{.WORKING_DIR}} ...'
+      - cmd: |
+          xml edit --inplace -N x=http://www.w3.org/2000/svg --update "//x:text[@id='date']" --value "{{.BUILD_DATE}}" --update "//x:text[@id='version']" --value "{{.GIT_COMMIT}}" cover.svg
+      - cmd: ebook-cli build
+      - cmd: |
+          if [ ! -d "{{.DIST_DIR}}" ]; then
+            echo "Creating: {{.DIST_DIR}}"
+            mkdir -p "{{.DIST_DIR}}"
+          fi
+          echo "Moving epub to: {{.DIST_DIR}}"
+          mv -f *.epub "{{.DIST_DIR}}"/
   
   pdf:
     desc: Convert books to A5 PDF
@@ -67,5 +63,14 @@ tasks:
         set -e
         export QTWEBENGINE_CHROMIUM_FLAGS="--no-sandbox"
         for book in *.epub; do
-          ebook-convert ${book} ${book%.epub}.pdf --paper-size a5 --pdf-page-margin-bottom 36 --pdf-page-margin-left 24 --pdf-page-margin-right 24 --pdf-page-margin-top 24 --pdf-page-numbers
+          ebook-convert ${book} ${book%.epub}.pdf \
+            --paper-size a5 \
+            --pdf-default-font-size 20 \
+            --pdf-add-toc \
+            --toc-title "Spis treści" \
+            --pdf-page-margin-bottom 36 \
+            --pdf-page-margin-left 36 \
+            --pdf-page-margin-right 36 \
+            --pdf-page-margin-top 36 \
+            --pdf-footer-template '<footer><div style="margin: auto;">&mdash; _PAGENUM_ &mdash;</div></footer>'
         done

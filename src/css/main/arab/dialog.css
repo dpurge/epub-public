@@ -1,0 +1,22 @@
+div.dialog {
+    margin-bottom: 1em;
+}
+
+div.dialog > div.dialog-item {
+    text-indent: -1em;
+    padding-inline-start: 1em;
+    margin-bottom: 1em;
+}
+
+div.dialog > div.dialog-item > div.dialog-header {
+    display: inline;
+    color: darkgrey;
+}
+
+div.dialog > div.dialog-item > div.dialog-content {
+    display: inline;
+}
+
+div.dialog > div.dialog-item > div.dialog-content > p {
+    display: inline;
+}

@@ -20,38 +20,41 @@ table {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    hyphens: none !important;
+    -moz-hyphens: none !important;
+    -webkit-hyphens: none !important;
     page-break-after: avoid;
     page-break-inside: avoid;
     text-indent: 0px;
     text-align: left;
-    font-family: sans-serif;
+    font-family: "AR PL UKai CN","Microsoft YaHei", Arial, sans-serif;
 }
 
 h1 {
-    font-size: 1.6em;
+    font-size: 2em;
     margin-bottom: 3.2em;
 }
 
 h2 {
-    font-size: 1.4em;
+    font-size: 1.2em;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
 
 h3 {
-    font-size: 1.2em;
+    font-size: 0.7em;
 }
   
 h4 {
-    font-size: 1em;
+    font-size: 0.4em;
 }
   
 h5 {
-    font-size: 0.8em;
+    font-size: 0.3em;
 }
   
 h6 {
-    font-size: 0.6em;
+    font-size: 0.2em;
 }
 
 h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
@@ -59,7 +62,14 @@ h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
 }
 
 p {
-    font-family: serif;
+    font-family: "AR PL UKai CN", "Microsoft YaHei", serif;
+    font-size: 1.2rem;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+    -webkit-hyphenate-after: 3;
+    -webkit-hyphenate-before: 3;
+    -webkit-hyphenate-lines: 2;
     line-height: 1.5em;
     margin: 0;
     text-align: justify;
@@ -74,7 +84,7 @@ ul, ol, dl {
 }
 
 li {
-    font-family: serif;
+    font-family: "AR PL UKai CN", "Microsoft YaHei", serif;
     line-height: 1.5em;
     orphans: 2;
     widows: 2;
@@ -89,12 +99,12 @@ li p {
 
 dt {
     font-weight: bold;
-    font-family: sans-serif;
+    font-family: "AR PL UKai CN","Microsoft YaHei", sans-serif;
 }
 
 dd {
     line-height: 1.5em;
-    font-family: serif;
+    font-family: "AR PL UKai CN","Microsoft YaHei", serif;
 }
 
 dd p {
@@ -113,7 +123,7 @@ blockquote p {
 }
 
 pre, tt, code, samp, kbd {
-    font-family: monospace;
+    font-family: "Courier New", Courier, monospace;
     word-wrap: break-word;
 }
 
@@ -128,6 +138,9 @@ pre {
 
 img {
     border-radius: 0.3em;
+    -webkit-border-radius: 0.3em;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px;
     box-sizing: border-box;
     border: white 0.5em solid;
     max-width: 80%;
@@ -163,7 +176,11 @@ th {
 }
 
 td {
-    font-family: serif;
+    font-family: "Times New Roman", serif;
+    font-size: small;
+    hyphens: none;
+    -moz-hyphens: none;
+    -webkit-hyphens: none;
     padding: 5px !important;
     page-break-inside: avoid;
     text-align: left;
@@ -189,3 +206,64 @@ hr {
     margin-bottom: 1em;
 }
 /* end common */
+
+/* start dialog */
+div.dialog {
+    margin-bottom: 1em;
+}
+
+div.dialog > div.dialog-item {
+    text-indent: -1em;
+    padding-left: 1em;
+    margin-bottom: 1em;
+}
+
+div.dialog > div.dialog-item > div.dialog-header {
+    display: inline;
+    color: darkgrey;
+    font-size: 1.2rem;
+}
+
+div.dialog > div.dialog-item > div.dialog-content {
+    display: inline;
+}
+
+div.dialog > div.dialog-item > div.dialog-content > p {
+    display: inline;
+}
+/* end dialog */
+
+/* start vocabulary */
+div.vocabulary {
+    column-count: 2;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+div.vocabulary > div.vocabulary-item {
+    text-indent: -1em;
+    padding-left: 1em;
+}
+
+div.vocabulary > div.vocabulary-item > span.vocabulary-phrase {
+    font-size: 1.2rem;
+    /* font-weight: bold; */
+}
+
+div.vocabulary > div.vocabulary-item > span.vocabulary-grammar {
+    color: darkgrey;
+}
+
+div.vocabulary > div.vocabulary-item > span.vocabulary-transcription {
+    color: darkgrey;
+}
+
+div.vocabulary > div.vocabulary-item > span.vocabulary-transcription:before {
+    content: '[';
+}
+
+div.vocabulary > div.vocabulary-item > span.vocabulary-transcription:after {
+    content: ']';
+}
+
+/* div.vocabulary > div.vocabulary-item > span.vocabulary-translation {} */
+/* end vocabulary */
