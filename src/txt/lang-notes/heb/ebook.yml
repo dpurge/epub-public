@@ -1,0 +1,29 @@
+identifier: b7fe59bc-63f4-49cf-83ad-cba007280a1d
+filename: hebrew-notes-public.epub
+
+title: Język hebrajski (publiczne)
+author: D. Purge
+language: heb
+script: hebr
+
+cover: cover.svg
+description: |
+  Teksty i notatki do nauki języka hebrajskiego.
+
+font: []
+image: []
+
+stylesheet:
+  cover: ../../../css/lang/hebr/cover.css
+  section: ../../../css/lang/hebr/section.css
+  chapter: ../../../css/lang/hebr/chapter.css
+  common:
+    - ../../../css/main/hebr/font.css
+    - ../../../css/main/hebr/base.css
+    - ../../../css/main/hebr/dialog.css
+    - ../../../css/main/hebr/vocabulary.css
+
+text:
+- - rath-1917/section.md
+  - rath-1917/001.md
+  
