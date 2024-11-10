@@ -1,0 +1,29 @@
+identifier: e4f79107-a988-4c9f-bce6-ecab06db2f4f
+filename: farsi-notes-public.epub
+
+title: Język perski (publiczny)
+author: D. Purge
+language: fas
+script: arab
+
+cover: cover.svg
+description: |
+  Teksty i notatki do nauki języka perskiego.
+
+font: []
+image: []
+
+stylesheet:
+  cover: ../../../css/lang/arab/cover.css
+  section: ../../../css/lang/arab/section.css
+  chapter: ../../../css/lang/arab/chapter.css
+  common:
+    - ../../../css/main/arab/font.css
+    - ../../../css/main/arab/base.css
+    - ../../../css/main/arab/dialog.css
+    - ../../../css/main/arab/vocabulary.css
+
+text:
+- - seidel-1904/section.md
+  - seidel-1904/01.md
+  
