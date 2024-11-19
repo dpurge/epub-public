@@ -1,0 +1,29 @@
+identifier: e4a5ad77-5e1e-4f8a-a95d-0088cf641d50
+filename: turkish-notes-private.epub
+
+title: Język turecki (prywatny)
+author: D. Purge
+language: tur
+script: latn
+
+cover: cover.svg
+description: |
+  Teksty i notatki do nauki języka tureckiego.
+
+font: []
+image: []
+
+stylesheet:
+  cover: ../../../css/lang/latn/cover.css
+  section: ../../../css/lang/latn/section.css
+  chapter: ../../../css/lang/latn/chapter.css
+  common:
+    - ../../../css/main/latn/font.css
+    - ../../../css/main/latn/base.css
+    - ../../../css/main/latn/dialog.css
+    - ../../../css/main/latn/vocabulary.css
+
+text:
+- - wied/section.md
+  - wied/01.md
+  - wied/02.md
