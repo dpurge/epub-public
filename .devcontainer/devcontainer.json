@@ -1,0 +1,22 @@
+{
+    "name": "jdp-ebook",
+    "image": "registry.home.arpa:5000/jdp-ebook",
+    
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "files.eol": "\n"
+            },
+            "extensions": [
+                "EditorConfig.EditorConfig",
+                "yzhang.markdown-all-in-one",
+                "mechatroner.rainbow-csv"
+            ]
+        }
+    },
+    
+    "remoteEnv": {
+    },
+
+    "postCreateCommand": "uname -a"
+}
