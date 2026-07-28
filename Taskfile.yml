@@ -13,6 +13,7 @@ vars:
   # run, e.g. `task build-all FORMATS=epub,pdf`.
   FORMATS: epub,pdf,mdx
   BOOK_PROJECTS: |
+    src/txt/lang-notes/deu
     src/txt/lang-notes/fas
     src/txt/lang-notes/heb
     src/txt/lang-notes/tur

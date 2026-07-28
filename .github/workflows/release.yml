@@ -1,0 +1,138 @@
+# Build EPUB + PDF for each book whose sources changed since the last release
+# and publish them together in one GitHub release.
+#
+# Versioning is CalVer v<year>.<month>.<micro>, with <micro> auto-incrementing
+# within the current month from the existing git tags (same scheme as the
+# cli-tools release workflow). A book is (re)built when its ebook.yml, or any
+# file it references (cover, stylesheets including the shared ../../../css, or
+# its markdown sources), changed since the last release tag; the first ever run
+# (no tags) builds every book. Books are built with the published cli-tools
+# container image (ghcr.io/dpurge/cli-tools), which ships ebook-cli, Typst and
+# the fonts.
+name: release
+
+on:
+  push:
+    branches: [main]
+    paths: ['src/**'] # every book input (ebook.yml, cover, css, markdown) lives here
+  workflow_dispatch:
+
+# One release run at a time; queue concurrent merges so each gets its own micro.
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+permissions:
+  contents: write # create the tag and the GitHub release
+
+env:
+  IMAGE: ghcr.io/dpurge/cli-tools:latest
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history + tags (change detection + CalVer)
+          lfs: true # book images are tracked with Git LFS
+
+      - name: Detect changed books
+        id: detect
+        run: |
+          set -euo pipefail
+
+          # Baseline = the most recent release tag; empty on the first run.
+          baseline="$(git tag -l 'v*' | sort -V | tail -1 || true)"
+          echo "Baseline: ${baseline:-<none, first release>}"
+
+          changed=()
+          while IFS= read -r yml; do
+            dir="$(dirname "$yml")"
+            # Files this book references (relative to its dir), resolved to repo
+            # paths, plus the ebook.yml itself.
+            mapfile -t refs < <(yq '[.cover, .stylesheet.cover, .stylesheet.section, .stylesheet.chapter, (.stylesheet.common // [])[], (.font // [])[], (.image // [])[], (.text // [])[][]] | .[] | select(. != null)' "$yml")
+            files=("$yml")
+            for ref in "${refs[@]}"; do
+              [ -n "$ref" ] && files+=("$(realpath -m --relative-to="$PWD" "$dir/$ref")")
+            done
+            if [ -z "$baseline" ] || ! git diff --quiet "$baseline" HEAD -- "${files[@]}"; then
+              echo "changed: $dir"
+              changed+=("$dir")
+            fi
+          done < <(find src -name ebook.yml | sort)
+
+          if [ "${#changed[@]}" -eq 0 ]; then
+            echo "No book changed since the last release; nothing to do."
+            echo "any=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "any=true" >> "$GITHUB_OUTPUT"
+            {
+              echo "dirs<<EOF"
+              printf '%s\n' "${changed[@]}"
+              echo "EOF"
+            } >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Compute version (CalVer)
+        if: steps.detect.outputs.any == 'true'
+        id: version
+        run: |
+          set -euo pipefail
+          prefix="$(date -u +'%Y.%-m')"
+          last_micro="$(git tag -l "v${prefix}.*" | sed -E "s/^v${prefix}\.([0-9]+)$/\1/" | sort -n | tail -1)"
+          next_micro="${last_micro:-"-1"}"
+          next_micro=$((next_micro + 1))
+          tag="v${prefix}.${next_micro}"
+          echo "tag=${tag}" >> "$GITHUB_OUTPUT"
+          echo "Releasing ${tag}"
+
+      - name: Build changed books (EPUB + PDF)
+        if: steps.detect.outputs.any == 'true'
+        env:
+          DIRS: ${{ steps.detect.outputs.dirs }}
+        run: |
+          set -euo pipefail
+          docker pull -q "$IMAGE"
+          mkdir -p dist
+          build_date="$(date -u '+%Y-%m-%d')"
+          git_commit="$(git rev-parse --short HEAD)"
+          while IFS= read -r dir; do
+            [ -n "$dir" ] || continue
+            echo "::group::Building $dir"
+            # Stamp the cover (mirrors Taskfile) then build EPUB + PDF in the
+            # cli-tools container. The inner script is fed on stdin so the
+            # xmlstarlet xpath quotes need no escaping; BUILD_DATE/GIT_COMMIT are
+            # expanded by the container's shell from the passed env.
+            docker run --rm -i -e BUILD_DATE="$build_date" -e GIT_COMMIT="$git_commit" \
+              -v "$PWD":/repo -w "/repo/$dir" "$IMAGE" sh -eus <<'INNER'
+          if [ -f cover.svg ]; then
+            xmlstarlet edit --inplace -N x=http://www.w3.org/2000/svg \
+              --update "//x:text[@id='date']" --value "$BUILD_DATE" \
+              --update "//x:text[@id='version']" --value "$GIT_COMMIT" \
+              cover.svg
+          fi
+          ebook-cli build --format epub,pdf
+          INNER
+            find "$dir" -maxdepth 1 \( -name '*.epub' -o -name '*.pdf' \) -exec mv -f {} dist/ \;
+            rm -f "$dir"/*.typ
+            echo "::endgroup::"
+          done <<< "$DIRS"
+          echo "Release artifacts:"
+          ls -1 dist
+
+      - name: Create release
+        if: steps.detect.outputs.any == 'true'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: ${{ steps.version.outputs.tag }}
+          body: |
+            Books rebuilt because their sources changed since the previous release:
+
+            ${{ steps.detect.outputs.dirs }}
+          files: |
+            dist/*.epub
+            dist/*.pdf
+          fail_on_unmatched_files: true
