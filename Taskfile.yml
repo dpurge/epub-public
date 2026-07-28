@@ -3,31 +3,39 @@ version: '3'
 vars:
   DIST_DIR: '{{.ROOT_DIR}}/out'
   GIT_COMMIT:
-    sh: git log -n 1 --format=%h
+    # `|| echo unknown` keeps the build working inside the container, where a
+    # bind-mounted repo can trip git's "dubious ownership" check.
+    sh: git log -n 1 --format=%h 2>/dev/null || echo unknown
   BUILD_DATE:
     sh: date '+%Y-%m-%d'
-  EPUB_PROJECTS: |
-    src/txt/lang-notes/ind
+  # Formats built by `build` / `build-all`, produced natively by ebook-cli
+  # (no Calibre / ebook-convert): EPUB, PDF (via Typst) and MDX. Override per
+  # run, e.g. `task build-all FORMATS=epub,pdf`.
+  FORMATS: epub,pdf,mdx
+  BOOK_PROJECTS: |
+    src/txt/lang-notes/fas
+    src/txt/lang-notes/heb
+    src/txt/lang-notes/tur
 
 tasks:
 
   build:
-    desc: Build ePub project in the current directory
+    desc: Build the book in the current directory (epub, pdf, mdx)
     cmds:
-      - task: build-epub
+      - task: build-book
         vars:
           WORKING_DIR: '{{.USER_WORKING_DIR}}'
 
   build-all:
-    desc: Build all ePub projects
+    desc: Build all books (epub, pdf, mdx)
     cmds:
-      - for: { var: EPUB_PROJECTS }
-        task: build-epub
+      - for: { var: BOOK_PROJECTS }
+        task: build-book
         vars:
           WORKING_DIR: '{{.ITEM}}'
 
-  build-epub:
-    desc: Build ePub
+  build-book:
+    desc: Build one book project into the configured formats
     internal: true
     silent: true
     dir: '{{.WORKING_DIR}}'
@@ -39,38 +47,31 @@ tasks:
         - DIST_DIR
         - BUILD_DATE
         - GIT_COMMIT
+        - FORMATS
     cmds:
-      - cmd: echo 'Building {{.WORKING_DIR}} ...'
+      - cmd: echo 'Building {{.WORKING_DIR}} ({{.FORMATS}}) ...'
       - cmd: |
-          xml edit --inplace -N x=http://www.w3.org/2000/svg --update "//x:text[@id='date']" --value "{{.BUILD_DATE}}" --update "//x:text[@id='version']" --value "{{.GIT_COMMIT}}" cover.svg
-      - cmd: ebook-cli build
+          xmlstarlet edit --inplace -N x=http://www.w3.org/2000/svg \
+            --update "//x:text[@id='date']" --value "{{.BUILD_DATE}}" \
+            --update "//x:text[@id='version']" --value "{{.GIT_COMMIT}}" \
+            cover.svg
+      # EPUB, PDF (Typst) and MDX in one pass — replaces the old
+      # `ebook-cli build` + Calibre `ebook-convert` two-step.
+      - cmd: ebook-cli build --format {{.FORMATS}}
       - cmd: |
-          if [ ! -d "{{.DIST_DIR}}" ]; then
-            echo "Creating: {{.DIST_DIR}}"
-            mkdir -p "{{.DIST_DIR}}"
-          fi
-          echo "Moving epub to: {{.DIST_DIR}}"
-          mv -f *.epub "{{.DIST_DIR}}"/
-  
-  pdf:
-    desc: Convert books to A5 PDF
-    dir: '{{.DIST_DIR}}'
-    requires:
-      vars:
-        - DIST_DIR
-    cmds:
-      - |
-        set -e
-        export QTWEBENGINE_CHROMIUM_FLAGS="--no-sandbox"
-        for book in *.epub; do
-          ebook-convert ${book} ${book%.epub}.pdf \
-            --paper-size a5 \
-            --pdf-default-font-size 20 \
-            --pdf-add-toc \
-            --toc-title "Spis treści" \
-            --pdf-page-margin-bottom 36 \
-            --pdf-page-margin-left 36 \
-            --pdf-page-margin-right 36 \
-            --pdf-page-margin-top 36 \
-            --pdf-footer-template '<footer><div style="margin: auto;">&mdash; _PAGENUM_ &mdash;</div></footer>'
-        done
+          set -e
+          mkdir -p "{{.DIST_DIR}}"
+          echo "Collecting output into {{.DIST_DIR}} ..."
+          # EPUB / PDF files.
+          for f in *.epub *.pdf; do
+            [ -f "$f" ] || continue
+            mv -f "$f" "{{.DIST_DIR}}/"
+          done
+          # MDX output directories (<name>-mdx/); replace any previous copy.
+          for d in *-mdx; do
+            [ -d "$d" ] || continue
+            rm -rf "{{.DIST_DIR}}/${d}"
+            mv "$d" "{{.DIST_DIR}}/"
+          done
+          # Drop the intermediate Typst source ebook-cli leaves next to the PDF.
+          rm -f *.typ

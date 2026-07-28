@@ -1,6 +1,6 @@
 {
-    "name": "jdp-ebook",
-    "image": "registry.home.arpa:5000/jdp-ebook",
+    "name": "cli-tools",
+    "image": "ghcr.io/dpurge/cli-tools:2026.7.0",
     
     "customizations": {
         "vscode": {
