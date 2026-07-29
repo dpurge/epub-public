@@ -10,9 +10,12 @@ div.vocabulary > div.vocabulary-item {
     padding-right: 1em;
     orphans: 2;
     widows: 2;
+    direction: rtl;
+    text-align: right;
 }
 
 div.vocabulary > div.vocabulary-item > span.vocabulary-phrase {
+    font-family: "Font Strong", sans-serif;
     font-size: 1em;
     font-weight: normal;
     page-break-after: avoid;
@@ -30,7 +33,7 @@ div.vocabulary > div.vocabulary-item > span.vocabulary-grammar {
 div.vocabulary > div.vocabulary-item > span.vocabulary-transcription {
     font-family: "Font Transcription", sans-serif;
     font-size: 0.8em;
-    font-style: italic;
+    font-style: normal;
     color: darkgrey;
 }
 

@@ -16,26 +16,40 @@
     font-family: "Font Header";
     font-style: normal;
     font-weight: normal;
-    src: local("Noto Sans Arabic");
+    src: local("Scheherezade New Regular");
 }
 
 @font-face {
     font-family: "Font Body";
     font-style: normal;
     font-weight: normal;
-    src: local("Noto Naskh Arabic");
+    src: local("Amiri Regular");
 }
 
 @font-face {
     font-family: "Font Transcription";
     font-style: normal;
     font-weight: normal;
-    src: local("Noto Sans");
+    src: local("Helvetica");
 }
 
 @font-face {
     font-family: "Font Translation";
     font-style: normal;
     font-weight: normal;
-    src: local("Noto Serif");
+    src: local("Times New Roman");
+}
+
+@font-face {
+    font-family: "Font Strong";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Lateef");
+}
+
+@font-face {
+    font-family: "Font Emphasis";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Aref Ruqaa");
 }

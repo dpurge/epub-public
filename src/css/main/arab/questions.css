@@ -1,0 +1,36 @@
+div.questions {
+    font-family: "Font Body", serif;
+    margin-bottom: 1em;
+    direction: rtl;
+}
+
+div.questions > div.questions-item {
+    margin-bottom: 0.3em;
+    orphans: 2;
+    widows: 2;
+}
+
+div.questions > div.questions-group {
+    display: table;
+    width: 100%;
+    direction: rtl;
+}
+
+div.questions > div.questions-group > div.questions-item.paired {
+    display: table-row;
+}
+
+div.questions > div.questions-group > div.questions-item.paired > div.questions-col1,
+div.questions > div.questions-group > div.questions-item.paired > div.questions-col2 {
+    display: table-cell;
+    vertical-align: top;
+}
+
+div.questions > div.questions-group > div.questions-item.paired > div.questions-col1 {
+    padding-inline-end: 1em;
+}
+
+div.questions span.questions-question {
+    direction: rtl;
+    unicode-bidi: embed;
+}

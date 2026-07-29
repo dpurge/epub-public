@@ -1,0 +1,42 @@
+div.models {
+    margin-bottom: 1em;
+}
+
+div.models > div.models-item {
+    margin-bottom: 0.3em;
+    orphans: 2;
+    widows: 2;
+}
+
+div.models > div.models-group {
+    display: table;
+    width: 100%;
+}
+
+div.models > div.models-group > div.models-item.paired {
+    display: table-row;
+}
+
+div.models > div.models-group > div.models-item.paired > div.models-col1,
+div.models > div.models-group > div.models-item.paired > div.models-col2 {
+    display: table-cell;
+    vertical-align: top;
+}
+
+div.models > div.models-group > div.models-item.paired > div.models-col1 {
+    padding-right: 1em;
+}
+
+div.models span.models-phrase {
+    font-weight: bold;
+}
+
+div.models span.models-transcription {
+    font-family: "Font Transcription", sans-serif;
+    font-style: italic;
+    color: darkgrey;
+}
+
+div.models span.models-translation {
+    font-family: "Font Translation", serif;
+}

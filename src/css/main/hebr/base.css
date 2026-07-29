@@ -11,6 +11,7 @@ h1 {
     text-align: right;
     font-family: "Font Header", sans-serif;
     font-size: 1.6em;
+    font-weight: normal;
     margin-bottom: 3.2em;
 }
 
@@ -21,6 +22,7 @@ h2 {
     text-align: right;
     font-family: "Font Header", sans-serif;
     font-size: 1.4em;
+    font-weight: normal;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
 }
@@ -32,6 +34,7 @@ h3 {
     text-align: right;
     font-family: "Font Header", sans-serif;
     font-size: 1.2em;
+    font-weight: normal;
 }
 
 p {
@@ -40,6 +43,16 @@ p {
     text-align: justify;
     orphans: 2;
     widows: 2;
+}
+
+strong, b {
+    font-family: "Font Strong", sans-serif;
+    font-weight: normal;
+}
+
+em, i {
+    font-family: "Font Emphasis", sans-serif;
+    font-style: normal;
 }
 
 ul {
