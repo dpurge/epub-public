@@ -2,26 +2,26 @@
     font-family: "Font Header";
     font-style: normal;
     font-weight: normal;
-    src: local("Gveret Levin AlefAlefAlef Regular");
+    src: local("Noto Sans Hebrew");
 }
 
 @font-face {
     font-family: "Font Body";
     font-style: normal;
     font-weight: normal;
-    src: local("Ezra SIL");
+    src: local("Noto Serif Hebrew");
 }
 
 @font-face {
     font-family: "Font Transcription";
     font-style: normal;
     font-weight: normal;
-    src: local("Helvetica");
+    src: local("Noto Sans");
 }
 
 @font-face {
     font-family: "Font Translation";
     font-style: normal;
     font-weight: normal;
-    src: local("Times New Roman");
+    src: local("Noto Serif");
 }

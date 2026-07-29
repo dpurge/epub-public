@@ -2,26 +2,26 @@
     font-family: "Font Header";
     font-style: normal;
     font-weight: normal;
-    src: local("Helvetica");
+    src: local("Noto Sans");
 }
 
 @font-face {
     font-family: "Font Body";
     font-style: normal;
     font-weight: normal;
-    src: local("Times New Roman");
+    src: local("Noto Serif");
 }
 
 @font-face {
     font-family: "Font Transcription";
     font-style: normal;
     font-weight: normal;
-    src: local("Helvetica");
+    src: local("Noto Sans");
 }
 
 @font-face {
     font-family: "Font Translation";
     font-style: normal;
     font-weight: normal;
-    src: local("Times New Roman");
+    src: local("Noto Serif");
 }
