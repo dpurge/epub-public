@@ -1,6 +1,6 @@
 {
     "name": "cli-tools",
-    "image": "ghcr.io/dpurge/cli-tools:2026.7.1",
+    "image": "ghcr.io/dpurge/cli-tools:2026.7.2",
     
     "customizations": {
         "vscode": {

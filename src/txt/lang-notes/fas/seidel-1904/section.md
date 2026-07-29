@@ -1,5 +1,5 @@
 # Praktische Grammatik der Neupersischen Sprache fuer den Selbstunterricht
 
-- Seidel A.
+Seidel A.
 
 (1904)

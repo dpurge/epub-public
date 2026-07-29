@@ -8,7 +8,7 @@ script: hebr
 
 cover: cover.svg
 description: |
-  Teksty i notatki do nauki języka hebrajskiego.
+  Notatki do nauki języka hebrajskiego
 
 font: []
 image: []
@@ -26,4 +26,33 @@ stylesheet:
 text:
 - - rath-1917/section.md
   - rath-1917/001.md
+  - rath-1917/002.md
+  - rath-1917/003.md
+  - rath-1917/004.md
+  - rath-1917/005.md
+  - rath-1917/006.md
+  - rath-1917/007.md
+  - rath-1917/008.md
+  - rath-1917/009.md
+  - rath-1917/010.md
+  - rath-1917/011.md
+  - rath-1917/012.md
+  - rath-1917/013.md
+  - rath-1917/014.md
+  - rath-1917/015.md
+  - rath-1917/016.md
+  - rath-1917/017.md
+  - rath-1917/018.md
+  - rath-1917/019.md
+  - rath-1917/020.md
+  - rath-1917/021.md
+  - rath-1917/022.md
+  - rath-1917/023.md
+  - rath-1917/024.md
+  - rath-1917/025.md
+  - rath-1917/026.md
+  - rath-1917/027.md
+  - rath-1917/028.md
+  - rath-1917/029.md
+  - rath-1917/030.md
   

@@ -1,0 +1,39 @@
+identifier: dd3a2776-a5fb-4745-9bb7-74c7cf1a9796
+filename: latin-notes-public.epub
+
+title: Język łaciński (publiczne)
+author: D. Purge
+language: lat
+script: latn
+
+cover: cover.svg
+description: |
+  Teksty i notatki do nauki języka łacińskiego.
+
+font: []
+image: []
+
+stylesheet:
+  cover: ../../../css/lang/latn/cover.css
+  section: ../../../css/lang/latn/section.css
+  chapter: ../../../css/lang/latn/chapter.css
+  common:
+    - ../../../css/main/latn/font.css
+    - ../../../css/main/latn/base.css
+    - ../../../css/main/latn/dialog.css
+    - ../../../css/main/latn/vocabulary.css
+
+text:
+- - lewicki-1924/section.md
+  - lewicki-1924/a01.md
+  - lewicki-1924/a02.md
+  - lewicki-1924/a03.md
+  - lewicki-1924/a04.md
+  - lewicki-1924/a05.md
+  - lewicki-1924/a06.md
+  - lewicki-1924/a07.md
+  - lewicki-1924/a08.md
+  - lewicki-1924/a09.md
+  - lewicki-1924/a10.md
+  - lewicki-1924/a11.md
+  

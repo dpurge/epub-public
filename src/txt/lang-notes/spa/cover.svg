@@ -41,7 +41,7 @@
     <tspan x="50%">Język</tspan>
     <tspan x="50%" dy="1.2em">hiszpański</tspan>
   </text>
-  <text x="50%" y="60%" id="subtitle">(publiczny)</text>
-  <text x="50%" y="80%" id="date">2026-07-28</text>
-  <text x="50%" y="90%" id="version">eb74014</text>
+  <text x="50%" y="60%" id="subtitle">(publiczne)</text>
+  <text x="50%" y="80%" id="date">2026-07-29</text>
+  <text x="50%" y="90%" id="version">b6ab8c8</text>
 </svg>
