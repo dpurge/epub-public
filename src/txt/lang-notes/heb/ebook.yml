@@ -22,6 +22,10 @@ stylesheet:
     - ../../../css/main/hebr/base.css
     - ../../../css/main/hebr/dialog.css
     - ../../../css/main/hebr/vocabulary.css
+    - ../../../css/main/hebr/models.css
+    - ../../../css/main/hebr/questions.css
+    - ../../../css/main/hebr/text.css
+    - ../../../css/main/hebr/parallel.css
 
 text:
 - - rath-1917/section.md

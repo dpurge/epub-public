@@ -1,0 +1,69 @@
+div.text {
+    font-family: "Font Body", serif;
+}
+
+div.text h1,
+div.text h2,
+div.text h3 {
+    text-align: center;
+}
+
+div.text table,
+div.transcription table,
+div.translation table {
+    width: 100%;
+}
+
+div.transcription {
+    font-family: "Font Transcription", sans-serif;
+    direction: ltr;
+    unicode-bidi: embed;
+}
+
+div.transcription p {
+    font-family: "Font Transcription", sans-serif;
+}
+
+div.transcription h1,
+div.transcription h2,
+div.transcription h3 {
+    text-align: center;
+}
+
+div.translation {
+    font-family: "Font Translation", serif;
+}
+
+div.translation p {
+    font-family: "Font Translation", serif;
+}
+
+div.translation h1,
+div.translation h2,
+div.translation h3 {
+    text-align: center;
+}
+
+div.grammar {
+    font-family: "Font Translation", serif;
+}
+
+div.grammar p {
+    font-family: "Font Translation", serif;
+}
+
+div.grammar h1,
+div.grammar h2,
+div.grammar h3 {
+    text-align: center;
+}
+
+div.grammar table {
+    width: 100%;
+    direction: ltr;
+    font-family: "Font Body", serif;
+}
+
+div.grammar td {
+    font-family: "Font Body", serif;
+}

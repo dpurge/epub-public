@@ -11,6 +11,7 @@ div.models > div.models-item {
 
 div.models > div.models-group {
     display: table;
+    table-layout: fixed;
     width: 100%;
     direction: rtl;
 }
@@ -23,6 +24,7 @@ div.models > div.models-group > div.models-item.paired > div.models-col1,
 div.models > div.models-group > div.models-item.paired > div.models-col2 {
     display: table-cell;
     vertical-align: top;
+    width: 50%;
 }
 
 div.models > div.models-group > div.models-item.paired > div.models-col1 {
@@ -42,8 +44,12 @@ div.models span.models-transcription {
     font-size: 0.8em;
     font-style: normal;
     color: darkgrey;
+    direction: ltr;
+    unicode-bidi: embed;
 }
 
 div.models span.models-translation {
     font-family: "Font Translation", serif;
+    direction: ltr;
+    unicode-bidi: embed;
 }

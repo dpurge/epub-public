@@ -22,8 +22,11 @@ stylesheet:
     - ../../../css/main/arab/base.css
     - ../../../css/main/arab/dialog.css
     - ../../../css/main/arab/vocabulary.css
+    - ../../../css/main/arab/models.css
+    - ../../../css/main/arab/questions.css
+    - ../../../css/main/arab/text.css
+    - ../../../css/main/arab/parallel.css
 
 text:
 - - seidel-1904/section.md
   - seidel-1904/01.md
-  

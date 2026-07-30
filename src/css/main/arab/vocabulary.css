@@ -1,3 +1,5 @@
+/* direction: ltr is intentional — multicol requires an LTR container so columns
+   flow left-to-right; per-item direction: rtl (below) handles RTL text inside each column. */
 div.vocabulary {
     column-count: 2;
     margin-bottom: 1em;
@@ -28,6 +30,8 @@ div.vocabulary > div.vocabulary-item > span.vocabulary-grammar {
     font-family: "Font Header", sans-serif;
     font-size: 0.8em;
     color: darkgrey;
+    direction: ltr;
+    unicode-bidi: embed;
 }
 
 div.vocabulary > div.vocabulary-item > span.vocabulary-transcription {
@@ -35,8 +39,12 @@ div.vocabulary > div.vocabulary-item > span.vocabulary-transcription {
     font-size: 0.8em;
     font-style: normal;
     color: darkgrey;
+    direction: ltr;
+    unicode-bidi: embed;
 }
 
 div.vocabulary > div.vocabulary-item > span.vocabulary-translation {
     font-family: "Font Translation", serif;
+    direction: ltr;
+    unicode-bidi: embed;
 }
