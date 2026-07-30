@@ -1,6 +1,6 @@
 {
     "name": "cli-tools",
-    "image": "ghcr.io/dpurge/cli-tools:2026.7.2",
+    "image": "ghcr.io/dpurge/cli-tools:2026.7.3",
     
     "customizations": {
         "vscode": {
@@ -17,6 +17,8 @@
     
     "remoteEnv": {
     },
+
+    "remoteUser": "root",
 
     "postCreateCommand": "uname -a"
 }

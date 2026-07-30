@@ -16,6 +16,8 @@ vars:
     src/txt/lang-notes/deu
     src/txt/lang-notes/fas
     src/txt/lang-notes/heb
+    src/txt/lang-notes/lat
+    src/txt/lang-notes/spa
     src/txt/lang-notes/tur
 
 tasks:
