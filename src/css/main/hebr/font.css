@@ -30,7 +30,7 @@
     font-family: "Font Strong";
     font-style: normal;
     font-weight: normal;
-    src: local("Noto Sans Hebrew");
+    src: local("Noto Serif Hebrew");
 }
 
 @font-face {
@@ -64,7 +64,7 @@
     font-family: "Font Hebr Vocabulary Phrase";
     font-style: normal;
     font-weight: normal;
-    src: local("Noto Rashi Hebrew");
+    src: local("Noto Serif Hebrew");
 }
 
 @font-face {

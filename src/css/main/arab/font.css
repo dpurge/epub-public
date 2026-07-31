@@ -44,7 +44,7 @@
     font-family: "Font Strong";
     font-style: normal;
     font-weight: normal;
-    src: local("Noto Kufi Arabic");
+    src: local("Noto Naskh Arabic");
 }
 
 @font-face {
@@ -71,14 +71,14 @@
     font-family: "Font Arab Questions Answer";
     font-style: normal;
     font-weight: normal;
-    src: local("Noto Kufi Arabic");
+    src: local("Noto Naskh Arabic");
 }
 
 @font-face {
     font-family: "Font Arab Vocabulary Phrase";
     font-style: normal;
     font-weight: normal;
-    src: local("Noto Sans Arabic");
+    src: local("Noto Naskh Arabic");
 }
 
 @font-face {
@@ -96,7 +96,7 @@
     font-family: "Font Latn Text Transcription";
     font-style: normal;
     font-weight: normal;
-    src: local("Noto Sans Mono");
+    src: local("Noto Serif");
 }
 
 @font-face {
