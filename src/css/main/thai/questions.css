@@ -1,0 +1,40 @@
+div.questions {
+    font-family: "Font Body", serif;
+    margin-bottom: 1em;
+}
+
+div.questions > div.questions-item {
+    margin-bottom: 0.3em;
+    orphans: 2;
+    widows: 2;
+}
+
+div.questions > div.questions-group {
+    display: table;
+    width: 100%;
+}
+
+div.questions > div.questions-group > div.questions-item.paired {
+    display: table-row;
+}
+
+div.questions > div.questions-group > div.questions-item.paired > div.questions-col1,
+div.questions > div.questions-group > div.questions-item.paired > div.questions-col2 {
+    display: table-cell;
+    vertical-align: top;
+}
+
+div.questions > div.questions-group > div.questions-item.paired > div.questions-col1 {
+    padding-right: 1em;
+}
+
+/* Font-config qualified-role demo: question/answer follow the block's own
+   script, so the chain is scoped by the wrapper's .s-<script> class
+   (mirrors the arab template's .s-arab .questions-question pattern). */
+.s-thai .questions-question {
+    font-family: "Font Thai Questions Question", "Font Thai Questions", "Font Thai", "Font Body", serif;
+}
+
+.s-thai .questions-answer {
+    font-family: "Font Thai Questions Answer", "Font Thai Questions", "Font Thai", "Font Body", serif;
+}

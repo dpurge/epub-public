@@ -1,0 +1,40 @@
+div.questions {
+    font-family: "Font Body", serif;
+    margin-bottom: 1em;
+}
+
+div.questions > div.questions-item {
+    margin-bottom: 0.3em;
+    orphans: 2;
+    widows: 2;
+}
+
+div.questions > div.questions-group {
+    display: table;
+    width: 100%;
+}
+
+div.questions > div.questions-group > div.questions-item.paired {
+    display: table-row;
+}
+
+div.questions > div.questions-group > div.questions-item.paired > div.questions-col1,
+div.questions > div.questions-group > div.questions-item.paired > div.questions-col2 {
+    display: table-cell;
+    vertical-align: top;
+}
+
+div.questions > div.questions-group > div.questions-item.paired > div.questions-col1 {
+    padding-right: 1em;
+}
+
+/* SPECS §4/§7.2 qualified per-slot demo: question/answer follow the
+   block's own script, scoped by the wrapper's s-hans class (mirrors the
+   arab/hebr wiring). */
+.s-hans .questions-question {
+    font-family: "Font Hans Questions Question", "Font Hans Questions", "Font Hans", "Font Body", serif;
+}
+
+.s-hans .questions-answer {
+    font-family: "Font Hans Questions Answer", "Font Hans Questions", "Font Hans", "Font Body", serif;
+}

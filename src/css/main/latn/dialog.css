@@ -20,3 +20,9 @@ div.dialog > div.dialog-item > div.dialog-content {
 div.dialog > div.dialog-item > div.dialog-content > p {
     display: inline;
 }
+
+/* Font-config qualified-role demo: header follows the block's own script,
+   so the chain is scoped by the wrapper's .s-<script> class. */
+.s-latn .dialog-header {
+    font-family: "Font Latn Dialog Header", "Font Latn Dialog", "Font Latn", "Font Header", sans-serif;
+}

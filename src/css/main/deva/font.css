@@ -1,0 +1,77 @@
+@font-face {
+    font-family: "Font Header";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans Devanagari");
+}
+
+@font-face {
+    font-family: "Font Body";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Serif Devanagari");
+}
+
+@font-face {
+    font-family: "Font Transcription";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans");
+}
+
+@font-face {
+    font-family: "Font Translation";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Serif");
+}
+
+/* Font-config qualified-role demo (all-Noto rollout): per-slot examples
+   with distinct Noto faces, wired via .s-deva-scoped selectors in
+   questions.css / vocabulary.css / dialog.css. */
+
+@font-face {
+    font-family: "Font Deva Questions Question";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Serif Devanagari");
+}
+
+@font-face {
+    font-family: "Font Deva Questions Answer";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans Devanagari");
+}
+
+@font-face {
+    font-family: "Font Deva Vocabulary Phrase";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Serif Devanagari");
+}
+
+@font-face {
+    font-family: "Font Deva Dialog Header";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans Devanagari");
+}
+
+/* Fixed-script (Latin) transcription faces — declared identically in every
+   script's font.css, since transcription fields are always Latin script
+   regardless of the surrounding block's own script. */
+
+@font-face {
+    font-family: "Font Latn Text Transcription";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans Mono");
+}
+
+@font-face {
+    font-family: "Font Latn Vocabulary Transcription";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans");
+}

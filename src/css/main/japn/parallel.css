@@ -1,0 +1,22 @@
+div.parallel {
+    display: table;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+div.parallel > div.parallel-row {
+    display: table-row;
+}
+
+div.parallel > div.parallel-row > div.parallel-cell {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    padding: 0.4em 0.6em;
+    text-align: justify;
+}
+
+div.parallel-cell.secondary {
+    font-family: "Font Translation", serif;
+    unicode-bidi: embed;
+}

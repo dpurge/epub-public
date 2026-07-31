@@ -44,7 +44,7 @@
     font-family: "Font Strong";
     font-style: normal;
     font-weight: normal;
-    src: local("Noto Naskh Arabic");
+    src: local("Noto Kufi Arabic");
 }
 
 @font-face {
@@ -52,4 +52,56 @@
     font-style: normal;
     font-weight: normal;
     src: local("Noto Naskh Arabic");
+}
+
+/* SPECS §3/§4 worked examples (font-config INC4). Base roles above are kept
+   FIRST and unchanged (ASR-1). All-Noto rollout: fonts-noto-cjk +
+   fonts-noto-extra are installed in the build image alongside fonts-noto
+   (Dockerfile), so every qualified face below resolves to a real, visibly
+   distinct Google Noto font instead of a platform substitute. */
+
+@font-face {
+    font-family: "Font Arab Questions Question";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Naskh Arabic");
+}
+
+@font-face {
+    font-family: "Font Arab Questions Answer";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Kufi Arabic");
+}
+
+@font-face {
+    font-family: "Font Arab Vocabulary Phrase";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans Arabic");
+}
+
+@font-face {
+    font-family: "Font Arab Dialog Header";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Kufi Arabic");
+}
+
+/* Fixed-script (latn) transcription fields — decoupled from the block's own
+   script (SPECS §4/§7.2 worked example B). Declared in EVERY script's
+   font.css so romanized transcription reads consistently across books. */
+
+@font-face {
+    font-family: "Font Latn Text Transcription";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans Mono");
+}
+
+@font-face {
+    font-family: "Font Latn Vocabulary Transcription";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans");
 }

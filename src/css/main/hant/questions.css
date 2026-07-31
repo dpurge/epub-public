@@ -27,3 +27,14 @@ div.questions > div.questions-group > div.questions-item.paired > div.questions-
 div.questions > div.questions-group > div.questions-item.paired > div.questions-col1 {
     padding-right: 1em;
 }
+
+/* SPECS §4/§7.2 qualified per-slot demo: question/answer follow the
+   block's own script, scoped by the wrapper's s-hant class (mirrors the
+   arab/hebr wiring). */
+.s-hant .questions-question {
+    font-family: "Font Hant Questions Question", "Font Hant Questions", "Font Hant", "Font Body", serif;
+}
+
+.s-hant .questions-answer {
+    font-family: "Font Hant Questions Answer", "Font Hant Questions", "Font Hant", "Font Body", serif;
+}

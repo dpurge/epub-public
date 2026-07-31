@@ -1,0 +1,28 @@
+div.dialog {
+    margin-bottom: 1em;
+}
+
+div.dialog > div.dialog-item {
+    text-indent: -1em;
+    padding-left: 1em;
+    margin-bottom: 1em;
+}
+
+div.dialog > div.dialog-item > div.dialog-header {
+    display: inline;
+    color: darkgrey;
+}
+
+div.dialog > div.dialog-item > div.dialog-content {
+    display: inline;
+}
+
+div.dialog > div.dialog-item > div.dialog-content > p {
+    display: inline;
+}
+
+/* Font-config qualified-role demo: header follows the block's own script,
+   so the chain is scoped by the wrapper's .s-<script> class. */
+.s-deva .dialog-header {
+    font-family: "Font Deva Dialog Header", "Font Deva Dialog", "Font Deva", "Font Header", sans-serif;
+}

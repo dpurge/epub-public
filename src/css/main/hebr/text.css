@@ -15,13 +15,16 @@ div.translation table {
 }
 
 div.transcription {
-    font-family: "Font Transcription", sans-serif;
+    /* SPECS §4/§7.2 worked example B: transcription is a fixed-script (latn)
+       field, decoupled from the block's own foreign script, so this
+       selector is unscoped (no .s-hebr prefix). */
+    font-family: "Font Latn Text Transcription", "Font Transcription", sans-serif;
     direction: ltr;
     unicode-bidi: embed;
 }
 
 div.transcription p {
-    font-family: "Font Transcription", sans-serif;
+    font-family: "Font Latn Text Transcription", "Font Transcription", sans-serif;
 }
 
 div.transcription h1,

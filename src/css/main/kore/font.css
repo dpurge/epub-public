@@ -1,0 +1,91 @@
+@font-face {
+    font-family: "Font Header";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans CJK KR");
+}
+
+@font-face {
+    font-family: "Font Body";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Serif CJK KR");
+}
+
+@font-face {
+    font-family: "Font Transcription";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans");
+}
+
+@font-face {
+    font-family: "Font Translation";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Serif");
+}
+
+@font-face {
+    font-family: "Font Strong";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans CJK KR");
+}
+
+@font-face {
+    font-family: "Font Emphasis";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Serif CJK KR");
+}
+
+/* SPECS §4/§7.2 fixed-script (latn) transcription faces, declared in
+   EVERY script's font.css per the all-Noto font-config rollout — real
+   Google Noto faces (fonts-noto + fonts-noto-cjk in the Docker image),
+   no macOS substitutes needed. */
+@font-face {
+    font-family: "Font Latn Text Transcription";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans Mono");
+}
+
+@font-face {
+    font-family: "Font Latn Vocabulary Transcription";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans");
+}
+
+/* SPECS §4/§7.2 qualified per-slot demo (question ≠ answer, plus a
+   phrase face and a dialog-header face) — all Google Noto CJK KR,
+   installed via fonts-noto-cjk. Wired into text/dialog/questions/
+   vocabulary CSS below via the .s-kore scope. */
+@font-face {
+    font-family: "Font Kore Questions Question";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Serif CJK KR");
+}
+
+@font-face {
+    font-family: "Font Kore Questions Answer";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans CJK KR");
+}
+
+@font-face {
+    font-family: "Font Kore Vocabulary Phrase";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Serif CJK KR");
+}
+
+@font-face {
+    font-family: "Font Kore Dialog Header";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans CJK KR");
+}

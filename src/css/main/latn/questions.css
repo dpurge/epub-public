@@ -27,3 +27,14 @@ div.questions > div.questions-group > div.questions-item.paired > div.questions-
 div.questions > div.questions-group > div.questions-item.paired > div.questions-col1 {
     padding-right: 1em;
 }
+
+/* Font-config qualified-role demo: question/answer follow the block's own
+   script, so the chain is scoped by the wrapper's .s-<script> class
+   (mirrors the arab template's .s-arab .questions-question pattern). */
+.s-latn .questions-question {
+    font-family: "Font Latn Questions Question", "Font Latn Questions", "Font Latn", "Font Body", serif;
+}
+
+.s-latn .questions-answer {
+    font-family: "Font Latn Questions Answer", "Font Latn Questions", "Font Latn", "Font Body", serif;
+}

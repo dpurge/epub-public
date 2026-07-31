@@ -13,10 +13,27 @@ div.dialog > div.dialog-item > div.dialog-header {
     color: darkgrey;
 }
 
+/* SPECS §4/§7.2 worked example: dialog header follows the block's own
+   script (arab), so the chain is scoped by the wrapper's s-<script> class. */
+.s-arab .dialog-header {
+    font-family: "Font Arab Dialog Header", "Font Arab Dialog", "Font Arab", "Font Header", sans-serif;
+}
+
 div.dialog > div.dialog-item > div.dialog-content {
     display: inline;
 }
 
 div.dialog > div.dialog-item > div.dialog-content > p {
     display: inline;
+}
+
+/* SPECS §7.1/ASR-4 fix: as=translation swaps the dialog's primary text from
+   Body to Translation, mirroring the Typst as=translation swap (§4.1) so
+   PDF and EPUB no longer silently diverge (code-review finding #4). A
+   direct rule on div.dialog.as-translation overrides the inherited
+   "Font Body" (base.css's `body { font-family: "Font Body", ... }`) for
+   both the header and content, which inherit font-family from this
+   wrapper. */
+div.dialog.as-translation {
+    font-family: "Font Translation", serif;
 }

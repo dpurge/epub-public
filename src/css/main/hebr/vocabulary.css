@@ -26,6 +26,12 @@ div.vocabulary > div.vocabulary-item > span.vocabulary-phrase {
     unicode-bidi: embed;
 }
 
+/* SPECS §4/§7.2 worked example: vocabulary phrase follows the block's own
+   script (hebr), so the chain is scoped by the wrapper's s-<script> class. */
+.s-hebr .vocabulary-phrase {
+    font-family: "Font Hebr Vocabulary Phrase", "Font Hebr Vocabulary", "Font Hebr", "Font Strong", sans-serif;
+}
+
 div.vocabulary > div.vocabulary-item > span.vocabulary-grammar {
     font-family: "Font Header", sans-serif;
     font-size: 0.8em;
@@ -35,7 +41,11 @@ div.vocabulary > div.vocabulary-item > span.vocabulary-grammar {
 }
 
 div.vocabulary > div.vocabulary-item > span.vocabulary-transcription {
-    font-family: "Font Transcription", sans-serif;
+    /* SPECS §4/§7.2 worked example B: transcription is a fixed-script (latn)
+       field, decoupled from the block's own foreign script, so this
+       selector is unscoped (no .s-hebr prefix) — distinct from text's
+       transcription chain. */
+    font-family: "Font Latn Vocabulary Transcription", "Font Transcription", sans-serif;
     font-size: 0.8em;
     font-style: normal;
     color: darkgrey;

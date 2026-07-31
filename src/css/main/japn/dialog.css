@@ -1,0 +1,29 @@
+div.dialog {
+    margin-bottom: 1em;
+}
+
+div.dialog > div.dialog-item {
+    text-indent: -1em;
+    padding-left: 1em;
+    margin-bottom: 1em;
+}
+
+div.dialog > div.dialog-item > div.dialog-header {
+    display: inline;
+    color: darkgrey;
+}
+
+div.dialog > div.dialog-item > div.dialog-content {
+    display: inline;
+}
+
+div.dialog > div.dialog-item > div.dialog-content > p {
+    display: inline;
+}
+
+/* SPECS §4/§7.2 qualified per-slot demo: dialog header follows the
+   block's own script, scoped by the wrapper's s-japn class (mirrors the
+   Questions Question/Answer wiring in questions.css). */
+.s-japn .dialog-header {
+    font-family: "Font Japn Dialog Header", "Font Japn Dialog", "Font Japn", "Font Header", sans-serif;
+}

@@ -25,3 +25,53 @@
     font-weight: normal;
     src: local("Noto Serif");
 }
+
+/* Font-config qualified-role demo (all-Noto rollout): per-slot examples
+   with distinct Noto faces, wired via .s-latn-scoped selectors in
+   questions.css / vocabulary.css / dialog.css. */
+
+@font-face {
+    font-family: "Font Latn Questions Question";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Serif");
+}
+
+@font-face {
+    font-family: "Font Latn Questions Answer";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans");
+}
+
+@font-face {
+    font-family: "Font Latn Vocabulary Phrase";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Serif Display");
+}
+
+@font-face {
+    font-family: "Font Latn Dialog Header";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans");
+}
+
+/* Fixed-script (Latin) transcription faces — declared identically in every
+   script's font.css, since transcription fields are always Latin script
+   regardless of the surrounding block's own script. */
+
+@font-face {
+    font-family: "Font Latn Text Transcription";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans Mono");
+}
+
+@font-face {
+    font-family: "Font Latn Vocabulary Transcription";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans");
+}

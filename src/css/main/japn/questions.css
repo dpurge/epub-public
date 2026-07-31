@@ -1,0 +1,40 @@
+div.questions {
+    font-family: "Font Body", serif;
+    margin-bottom: 1em;
+}
+
+div.questions > div.questions-item {
+    margin-bottom: 0.3em;
+    orphans: 2;
+    widows: 2;
+}
+
+div.questions > div.questions-group {
+    display: table;
+    width: 100%;
+}
+
+div.questions > div.questions-group > div.questions-item.paired {
+    display: table-row;
+}
+
+div.questions > div.questions-group > div.questions-item.paired > div.questions-col1,
+div.questions > div.questions-group > div.questions-item.paired > div.questions-col2 {
+    display: table-cell;
+    vertical-align: top;
+}
+
+div.questions > div.questions-group > div.questions-item.paired > div.questions-col1 {
+    padding-right: 1em;
+}
+
+/* SPECS §4/§7.2 qualified per-slot demo: question/answer follow the
+   block's own script, scoped by the wrapper's s-japn class (mirrors the
+   arab/hebr wiring). */
+.s-japn .questions-question {
+    font-family: "Font Japn Questions Question", "Font Japn Questions", "Font Japn", "Font Body", serif;
+}
+
+.s-japn .questions-answer {
+    font-family: "Font Japn Questions Answer", "Font Japn Questions", "Font Japn", "Font Body", serif;
+}

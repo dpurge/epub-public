@@ -34,3 +34,31 @@ div.questions span.questions-question {
     direction: rtl;
     unicode-bidi: embed;
 }
+
+/* SPECS §4/§7.2 worked example A: question/answer follow the block's own
+   script (arab), so the chain is scoped by the wrapper's s-<script> class. */
+.s-arab .questions-question {
+    font-family: "Font Arab Questions Question", "Font Arab Questions", "Font Arab", "Font Body", serif;
+}
+
+.s-arab .questions-answer {
+    font-family: "Font Arab Questions Answer", "Font Arab Questions", "Font Arab", "Font Body", serif;
+}
+
+/* SPECS §7.1/ASR-4 fix: as=translation swaps question/answer's base-role
+   fallback from Body to Translation, mirroring the Typst as=translation
+   swap (§4.1) so PDF and EPUB no longer silently diverge (code-review
+   finding #4). The unscoped rule covers a script-less/non-arab book; the
+   .s-arab-scoped rule keeps the same qualified overrides (levels 1-3
+   unchanged) but swaps only the terminal base-role fallback. */
+div.questions.as-translation {
+    font-family: "Font Translation", serif;
+}
+
+.s-arab.as-translation .questions-question {
+    font-family: "Font Arab Questions Question", "Font Arab Questions", "Font Arab", "Font Translation", serif;
+}
+
+.s-arab.as-translation .questions-answer {
+    font-family: "Font Arab Questions Answer", "Font Arab Questions", "Font Arab", "Font Translation", serif;
+}

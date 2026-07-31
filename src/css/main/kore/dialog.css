@@ -1,0 +1,29 @@
+div.dialog {
+    margin-bottom: 1em;
+}
+
+div.dialog > div.dialog-item {
+    text-indent: -1em;
+    padding-left: 1em;
+    margin-bottom: 1em;
+}
+
+div.dialog > div.dialog-item > div.dialog-header {
+    display: inline;
+    color: darkgrey;
+}
+
+div.dialog > div.dialog-item > div.dialog-content {
+    display: inline;
+}
+
+div.dialog > div.dialog-item > div.dialog-content > p {
+    display: inline;
+}
+
+/* SPECS §4/§7.2 qualified per-slot demo: dialog header follows the
+   block's own script, scoped by the wrapper's s-kore class (mirrors the
+   Questions Question/Answer wiring in questions.css). */
+.s-kore .dialog-header {
+    font-family: "Font Kore Dialog Header", "Font Kore Dialog", "Font Kore", "Font Header", sans-serif;
+}

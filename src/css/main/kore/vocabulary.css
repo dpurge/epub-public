@@ -26,8 +26,11 @@ div.vocabulary > div.vocabulary-item > span.vocabulary-grammar {
 }
 
 div.vocabulary > div.vocabulary-item > span.vocabulary-transcription {
-    font-family: "Font Transcription", sans-serif;
-    font-style: normal;
+    /* SPECS §4/§7.2 authoring pattern: fixed-script (latn) field, unscoped,
+       distinct from text's transcription chain. "Font Latn Vocabulary
+       Transcription" IS declared in this script's font.css (Noto Sans). */
+    font-family: "Font Latn Vocabulary Transcription", "Font Transcription", sans-serif;
+    font-style: italic;
     color: darkgrey;
     direction: ltr;
     unicode-bidi: embed;
@@ -37,4 +40,11 @@ div.vocabulary > div.vocabulary-item > span.vocabulary-translation {
     font-family: "Font Translation", serif;
     direction: ltr;
     unicode-bidi: embed;
+}
+
+/* SPECS §4/§7.2 qualified per-slot demo: vocabulary phrase follows the
+   block's own script, scoped by the wrapper's s-kore class (mirrors the
+   Questions Question/Answer wiring above). */
+.s-kore .vocabulary-phrase {
+    font-family: "Font Kore Vocabulary Phrase", "Font Kore Vocabulary", "Font Kore", "Font Strong", sans-serif;
 }

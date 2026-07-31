@@ -1,0 +1,48 @@
+div.vocabulary {
+    column-count: 2;
+    margin-bottom: 1em;
+}
+div.vocabulary > div.vocabulary-item {
+    text-indent: -1em;
+    padding-left: 1em;
+    padding-right: 1em;
+    orphans: 2;
+    widows: 2;
+}
+
+div.vocabulary > div.vocabulary-item > span.vocabulary-phrase {
+    font-weight: bold;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+}
+
+/* Font-config qualified-role demo: phrase follows the block's own script,
+   so the chain is scoped by the wrapper's .s-<script> class. */
+.s-deva .vocabulary-phrase {
+    font-family: "Font Deva Vocabulary Phrase", "Font Deva Vocabulary", "Font Deva", "Font Body", serif;
+}
+
+div.vocabulary > div.vocabulary-item > span.vocabulary-grammar {
+    font-family: "Font Header", sans-serif;
+    font-size: 0.8em;
+    color: darkgrey;
+    direction: ltr;
+    unicode-bidi: embed;
+}
+
+div.vocabulary > div.vocabulary-item > span.vocabulary-transcription {
+    /* SPECS §4/§7.2 authoring pattern: fixed-script (latn) field, unscoped,
+       distinct from text's transcription chain. Declared in this script's
+       font.css as "Font Latn Vocabulary Transcription" = Noto Sans. */
+    font-family: "Font Latn Vocabulary Transcription", "Font Transcription", sans-serif;
+    font-style: italic;
+    color: darkgrey;
+    direction: ltr;
+    unicode-bidi: embed;
+}
+
+div.vocabulary > div.vocabulary-item > span.vocabulary-translation {
+    font-family: "Font Translation", serif;
+    direction: ltr;
+    unicode-bidi: embed;
+}
