@@ -1,28 +1,27 @@
 identifier: 052a0a39-0cea-4952-be40-d6b27da19299
 filename: romanian-notes-public.epub
-
 title: Język Rumuński (publiczne)
 author: D. Purge
 language: pol
 script: latn
-
 cover: cover.svg
-description: |
-  Teksty i notatki do nauki języka rumuńskiego.
+description: 'Teksty i notatki do nauki języka rumuńskiego.
 
+  '
 font: []
 image: []
-
 stylesheet:
   cover: ../../../css/lang/latn/cover.css
   section: ../../../css/lang/latn/section.css
   chapter: ../../../css/lang/latn/chapter.css
   common:
-    - ../../../css/main/latn/font.css
-    - ../../../css/main/latn/base.css
-    - ../../../css/main/latn/dialog.css
-    - ../../../css/main/latn/vocabulary.css
-
+  - ../../../css/main/latn/font.css
+  - ../../../css/main/latn/base.css
+  - ../../../css/main/latn/dialog.css
+  - ../../../css/main/latn/vocabulary.css
 text:
 - - a1/section.md
   - a1/001.md
+  - a1/002.md
+  - a1/003.md
+  - a1/004.md
