@@ -1,0 +1,24 @@
+.block-marker {
+    margin: 1em 0 0.4em;
+}
+
+.block-title {
+    /* heading already styled; badge sits inline before text */
+}
+
+.ct-badge {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 1.1em;
+    height: 1.1em;
+    line-height: 1.1em;
+    text-align: center;
+    background: #000;
+    color: #fff;
+    font-family: "Font Header", sans-serif;
+    font-weight: bold;
+    font-size: 0.9em;
+    border-radius: 1px;
+    margin-inline-end: 0.4em;
+    vertical-align: baseline;
+}

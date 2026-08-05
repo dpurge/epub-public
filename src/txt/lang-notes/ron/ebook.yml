@@ -19,6 +19,11 @@ stylesheet:
   - ../../../css/main/latn/base.css
   - ../../../css/main/latn/dialog.css
   - ../../../css/main/latn/vocabulary.css
+  - ../../../css/main/latn/models.css
+  - ../../../css/main/latn/text.css
+  - ../../../css/main/latn/questions.css
+  - ../../../css/main/latn/parallel.css
+  - ../../../css/main/latn/badge.css
 text:
 - - a1/section.md
   - a1/001.md

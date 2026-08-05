@@ -1,0 +1,6 @@
+.s-hans .vocabulary-phrase,
+.s-hans .models-phrase,
+.s-hans:not(.as-translation) .dialog-content,
+.s-hans:not(.as-translation) .questions-question,
+.s-hans:not(.as-translation) .questions-answer,
+.text.s-hans { font-size: 1.333em; }

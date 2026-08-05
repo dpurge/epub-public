@@ -1,13 +1,11 @@
 identifier: 97016c98-78c2-49df-9410-b97d35473081
-filename: mandarin-hans-notes-public.epub
-title: Język chiński pismo uproszczone (publiczne)
+filename: mandarin-hans-lang-notes.epub
+title: Język chiński (简体)
 author: D. Purge
 language: pol
 script: latn
 cover: cover.svg
-description: 'Teksty i notatki do nauki języka chińskiego.
-
-  '
+description: Teksty i notatki do nauki języka chińskiego
 font: []
 image: []
 stylesheet:
@@ -19,7 +17,13 @@ stylesheet:
   - ../../../css/main/hans/base.css
   - ../../../css/main/hans/dialog.css
   - ../../../css/main/hans/vocabulary.css
+  - ../../../css/main/hans/models.css
+  - ../../../css/main/hans/text.css
+  - ../../../css/main/hans/questions.css
+  - ../../../css/main/hans/parallel.css
+  - ../../../css/main/hans/badge.css
+  - ../../../css/main/hans/size.css
 text:
-- - jandan/section.md
-  - jandan/001.md
+- - b1/section.md
   - b1/001.md
+  - b1/002.md
