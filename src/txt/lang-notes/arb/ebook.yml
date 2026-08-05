@@ -1,0 +1,28 @@
+identifier: b39d4c55-e6cd-45c1-b971-b8e64e5d1706
+filename: arabic-msa-lang-notes.epub
+
+title: Język arabski
+author: D. Purge
+language: arb
+script: arab
+
+cover: cover.svg
+description: |
+  Teksty i notatki do nauki języka arabskiego
+
+font: []
+image: []
+
+stylesheet:
+  cover: ../../../css/lang/arab/cover.css
+  section: ../../../css/lang/arab/section.css
+  chapter: ../../../css/lang/arab/chapter.css
+  common:
+    - ../../../css/main/arab/font.css
+    - ../../../css/main/arab/base.css
+    - ../../../css/main/arab/dialog.css
+    - ../../../css/main/arab/vocabulary.css
+
+text:
+- - b1/section.md
+  #- b1/001.md
