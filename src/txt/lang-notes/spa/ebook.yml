@@ -3,8 +3,11 @@ filename: spanish-notes-public.epub
 
 title: Język hiszpański (publiczne)
 author: D. Purge
+kind: language
 language: spa
 script: latn
+translation-language: pol
+translation-script: latn
 
 cover: cover.svg
 description: |
@@ -34,3 +37,9 @@ text:
   - hall-1918/03.md
   - hall-1918/04.md
   - hall-1918/05.md
+- - b1/section.md
+  - b1/001.md
+  - b1/002.md
+  - b1/003.md
+  - b1/004.md
+  - b1/005.md
