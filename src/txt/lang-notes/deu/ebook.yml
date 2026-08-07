@@ -3,7 +3,7 @@ filename: german-notes-public.epub
 
 title: Język niemiecki (publiczne)
 author: D. Purge
-language: deu
+language: pol
 script: latn
 
 cover: cover.svg
@@ -32,4 +32,7 @@ text:
   - reussner-1892/01.md
   - reussner-1892/02.md
   - reussner-1892/03.md
+- - b1/section.md
+  - b1/001.md
+  - b1/002.md
   
