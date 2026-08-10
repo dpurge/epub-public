@@ -1,0 +1,26 @@
+identifier: 0a4c66a4-e312-4f43-8b11-59e37ca41c74
+filename: french-lang-notes.epub
+
+title: Język francuski
+author: D. Purge
+language: pol
+script: latn
+
+cover: cover.svg
+description: |
+  Teksty i notatki do nauki języka francuskiego
+
+font: []
+image: []
+
+stylesheet:
+  cover: ../../../css/lang/latn/cover.css
+  section: ../../../css/lang/latn/section.css
+  chapter: ../../../css/lang/latn/chapter.css
+  common:
+    - ../../../css/main/latn/font.css
+    - ../../../css/main/latn/base.css
+    - ../../../css/main/latn/dialog.css
+    - ../../../css/main/latn/vocabulary.css
+
+text: []

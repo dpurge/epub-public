@@ -1,0 +1,26 @@
+identifier: 3f66b1ad-42c1-422b-ac6d-6184087ba92c
+filename: indonesian-lang-notes.epub
+
+title: Język indonezyjski
+author: D. Purge
+language: pol
+script: latn
+
+cover: cover.svg
+description: |
+  Teksty i notatki do nauki języka indonezyjskiego
+
+font: []
+image: []
+
+stylesheet:
+  cover: ../../../css/lang/latn/cover.css
+  section: ../../../css/lang/latn/section.css
+  chapter: ../../../css/lang/latn/chapter.css
+  common:
+    - ../../../css/main/latn/font.css
+    - ../../../css/main/latn/base.css
+    - ../../../css/main/latn/dialog.css
+    - ../../../css/main/latn/vocabulary.css
+
+text: []

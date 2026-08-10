@@ -1,0 +1,26 @@
+identifier: 1ae5e6ef-6838-4556-a283-4d636bb6c73d
+filename: ukrainian-lang-notes.epub
+
+title: Język ukraiński
+author: D. Purge
+language: ukr
+script: cyrl
+
+cover: cover.svg
+description: |
+  Teksty i notatki do nauki języka ukraińskiego
+
+font: []
+image: []
+
+stylesheet:
+  cover: ../../../css/lang/cyrl/cover.css
+  section: ../../../css/lang/cyrl/section.css
+  chapter: ../../../css/lang/cyrl/chapter.css
+  common:
+    - ../../../css/main/cyrl/font.css
+    - ../../../css/main/cyrl/base.css
+    - ../../../css/main/cyrl/dialog.css
+    - ../../../css/main/cyrl/vocabulary.css
+
+text: []

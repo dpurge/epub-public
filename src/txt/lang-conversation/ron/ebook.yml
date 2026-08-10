@@ -1,0 +1,39 @@
+identifier: 3d9c7a8d-d60b-446f-b528-38ad111f6e14
+filename: romanian-polish-conversation.epub
+title: Rozmówki polsko-rumuńskie
+author: D. Purge
+language: pol
+script: latn
+cover: cover.svg
+description: Rozmówki polsko-rumuńskie
+
+  '
+font: []
+image: []
+stylesheet:
+  cover: ../../../css/lang/latn/cover.css
+  section: ../../../css/lang/latn/section.css
+  chapter: ../../../css/lang/latn/chapter.css
+  common:
+  - ../../../css/main/latn/font.css
+  - ../../../css/main/latn/base.css
+  - ../../../css/main/latn/dialog.css
+  - ../../../css/main/latn/vocabulary.css
+  - ../../../css/main/latn/models.css
+  - ../../../css/main/latn/text.css
+  - ../../../css/main/latn/questions.css
+  - ../../../css/main/latn/parallel.css
+  - ../../../css/main/latn/badge.css
+text:
+- - 01/section.md
+  - 01/01.md
+  - 01/02.md
+  - 01/03.md
+  - 01/04.md
+  - 01/05.md
+  - 01/06.md
+- - 02/section.md
+  - 02/01.md
+  - 02/02.md
+  - 02/03.md
+  - 02/04.md
