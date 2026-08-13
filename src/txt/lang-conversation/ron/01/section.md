@@ -1,9 +1,1 @@
-{start-parallel lang=ron script=latn}
-
-# 
-
----
-
-# Pozdrowienia
-
-{end-parallel}
+# Pozdrowienia i zwroty grzecznościowe
