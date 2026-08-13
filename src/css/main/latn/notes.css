@@ -1,0 +1,13 @@
+/* Comment/note lines inside dialog/questions/models blocks (cli-tools
+   `{start-dialog}`/`{start-questions}`/`{start-models}` — a sentence or
+   phrase alone on a line wrapped in `(...)`) render as a centered paragraph
+   in the Notes role, falling back to Emphasis when "Font Notes" is
+   undeclared — mirrors the Go/Typst side's ASR-5 fallback. No forced
+   font-style: the role font itself carries the intended look. */
+p.block-note {
+    text-align: center;
+    font-family: "Font Notes", "Font Emphasis", serif;
+    line-height: 1.2em;
+    orphans: 2;
+    widows: 2;
+}

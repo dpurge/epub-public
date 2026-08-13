@@ -1,0 +1,48 @@
+identifier: d37ca49c-c8b1-4dd4-b62a-1c127b89829d
+filename: rust-programming
+
+title: Rust programming (publiczne)
+author: D. Purge
+language: pol
+script: latn
+
+cover: cover.svg
+description: |
+  Notatki do programowania w języku Rust
+
+font: []
+image: []
+
+stylesheet:
+  cover: ../../../css/lang/latn/cover.css
+  section: ../../../css/lang/latn/section.css
+  chapter: ../../../css/lang/latn/chapter.css
+  common:
+    - ../../../css/main/latn/font.css
+    - ../../../css/main/latn/base.css
+    - ../../../css/main/latn/parallel.css
+
+text:
+- - basics/section.md
+  - basics/01.md
+  - basics/02.md
+  - basics/03.md
+  - basics/04.md
+  - basics/05.md
+  - basics/06.md
+  - basics/07.md
+  - basics/08.md
+  - basics/09.md
+  - basics/10.md
+  - basics/11.md
+  - basics/12.md
+  - basics/13.md
+  - basics/14.md
+  - basics/15.md
+  - basics/16.md
+  - basics/17.md
+  - basics/18.md
+  - basics/19.md
+  - basics/20.md
+  - basics/21.md
+  
