@@ -42,6 +42,6 @@
     <tspan x="50%" dy="1.2em">rumuńskie</tspan>
   </text>
   <!-- text x="50%" y="60%" id="subtitle">(publiczne)</text -->
-  <text x="50%" y="80%" id="date">2026-08-10</text>
-  <text x="50%" y="90%" id="version">b5452e8</text>
+  <text x="50%" y="80%" id="date">2026-08-13</text>
+  <text x="50%" y="90%" id="version">0be37a2</text>
 </svg>
