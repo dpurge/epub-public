@@ -75,3 +75,25 @@
     font-weight: normal;
     src: local("Noto Sans");
 }
+
+/* {start-parallel-dialog} font-config qualified-role demo (SOURCE header,
+   scoped by wrapper's .s-grek class — see parallel-dialog.css). */
+
+@font-face {
+    font-family: "Font Grek ParallelDialog Header";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans");
+}
+
+/* Fixed-script (Latin) transcription face for {start-parallel-dialog} —
+   declared identically in every script's font.css, mirroring Text/
+   Vocabulary Transcription above (transcription is always Latin script
+   regardless of the surrounding block's own script). */
+
+@font-face {
+    font-family: "Font Latn ParallelDialog Transcription";
+    font-style: normal;
+    font-weight: normal;
+    src: local("Noto Sans");
+}

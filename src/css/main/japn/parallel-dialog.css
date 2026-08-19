@@ -1,0 +1,78 @@
+/* {start-parallel-dialog}: {start-parallel}'s row/table/cell grid (mirrors
+   parallel.css exactly, renamed parallel-dialog-*) where each cell holds a
+   {start-dialog} turn (mirrors dialog.css's item/header/content rules)
+   instead of arbitrary markdown. */
+
+div.parallel-dialog {
+    display: table;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+div.parallel-dialog > div.parallel-dialog-row {
+    display: table-row;
+}
+
+div.parallel-dialog > div.parallel-dialog-row > div.parallel-dialog-cell {
+    display: table-cell;
+    width: 50%;
+    vertical-align: top;
+    padding: 0.4em 0.6em;
+    text-align: justify;
+}
+
+/* TRANSLATION is a fixed-language field regardless of the block's own
+   script (mirrors parallel.css's .parallel-cell.secondary exactly) —
+   unscoped, identical in every script's CSS file. */
+div.parallel-dialog-cell.secondary {
+    font-family: "Font Translation", serif;
+    unicode-bidi: embed;
+}
+
+div.parallel-dialog-item {
+    text-indent: -1em;
+    padding-left: 1em;
+}
+
+div.parallel-dialog-header {
+    display: inline;
+    color: darkgrey;
+}
+
+div.parallel-dialog-content {
+    display: inline;
+}
+
+div.parallel-dialog-content > p {
+    display: inline;
+}
+
+/* Font-config qualified-role demo: the SOURCE column's header follows the
+   block's own script, so the chain is scoped by the wrapper's .s-<script>
+   class — but to .parallel-dialog-source specifically (not just .main), so
+   it does not also reach the transcription stacked below it in the same
+   cell, and not to the translation column, which shares this wrapper's
+   .s-japn class but is itself a fixed-language field (mirrors
+   dialog.css's .s-japn .dialog-header wiring). */
+.s-japn .parallel-dialog-source .parallel-dialog-header {
+    font-family: "Font Japn ParallelDialog Header", "Font Japn ParallelDialog", "Font Japn", "Font Header", sans-serif;
+}
+
+/* TRANSCRIPTION is a fixed-script (latn) field regardless of the block's
+   own script, mirroring vocabulary.css's .vocabulary-transcription
+   convention: unscoped (no .s-<script> prefix), the family name hardcodes
+   "Latn", and this rule is identical in every script's CSS file. Stacked
+   below the source inside the same .main cell (renderer.go), so it needs
+   its own margin — parallel.css has no equivalent rule for
+   .parallel-transcription (which stays raw/unstyled); this block's
+   transcription is turn-structured, so it gets full item/header/content
+   styling like the source and translation columns, just this font. */
+div.parallel-dialog-transcription {
+    margin-top: 0.3em;
+}
+
+div.parallel-dialog-transcription .parallel-dialog-content {
+    font-family: "Font Latn ParallelDialog Transcription", "Font Transcription", sans-serif;
+    font-style: italic;
+    color: darkgrey;
+}
